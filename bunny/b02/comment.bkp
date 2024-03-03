@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>It's a Bunny - Commentary</TITLE>
+<BODY BGCOLOR="#FFFFCC" TEXT="#666666" 
+	LINK="#0000FF" VLINK="#CCCCCC" ALT="">
+<A HREF="bunny.html"><IMG SRC="gifs/b.gif" BORDER=3 ALIGN=LEFT></A>
+<BR>
+<IMG SRC="gifs/cm.gif" ALIGN=RIGHT>
+<BR><HR><BR><BR><BR>
+<CENTER>
+<TABLE WIDTH=85%>
+<TR><TD><B>
+<CENTER>
+<A HREF="mailto:sean@iti.qc.ca">
+<IMG SRC="gifs/pub-sean.gif" BORDER=3></A>
+</CENTER><BR>
+I became the publisher of "It's a Bunny" when I had to fill out the form to
+get an ISSN number.  There was a field called <I>Publisher</I> that needed
+a name, and I stuck mine in there.  Until then, I was just the technocrat
+amongst the literati responsible for design and informatics.
+But now I'm a <I>publisher</I>.  Then again, on the Web, <I>everyone</I> 
+is a <I>publisher</I>. But it's not every site that gets named <I><A
+HREF="http://www.10q.com/canuck/">Canuck Site of the Day</I></A>.<BR>
+<BR>
+This issue represents yet another step forward in my efforts at designing an
+aesthetic and intelligent Web magazine interface.  The basic elements from
+<A HREF="../b01/bunny.html"> our first issue</A> have remained, real changes 
+involve the addition of a virtual table of contents in the left column of 
+the major sections, an upgrade in
+style, and you can instantly return to the top page just by clicking the
+stylized 'b' in the top left corner.  These changes should make the magazine 
+load faster, make navigation easier, and still provide a unique environment 
+in which to enjoy some fine creative works. It's spring. Enjoy.<BR>
+<BR><BR><BR>
+<CENTER>
+<A HREF="mailto:jargyle@vax2.concordia.ca">
+<IMG SRC="gifs/pub-jess.gif" BORDER=3></A>
+</CENTER>
+<BR><BR>
+</CENTER>
+</B></TD></TR></TABLE>
+<CENTER>
+<A HREF="contrib.html"><IMG SRC="gifs/arrow-l.gif" ALT="" BORDER=0 ALIGN=LEFT></A>
+<A HREF="bunnyinfo.html"><IMG SRC="gifs/arrow-r.gif" ALT="" BORDER=0 ALIGN=RIGHT></A>
+<A HREF="bunny.html"><IMG SRC="gifs/arrow-u.gif" ALT="" BORDER=0></A>
+</BODY>
+</HTML>

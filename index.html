@@ -1,0 +1,9 @@
+<HTML>
+<HEAD>
+<TITLE>Jessica Argyle - the website
+</TITLE>
+<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=/blog">
+</HEAD>
+<BODY BGCOLOR="#DDDDDD">
+</BODY>
+</HTML>
