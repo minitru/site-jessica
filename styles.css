@@ -557,6 +557,7 @@ section {
     flex: 1;
     min-width: 140px;
     text-align: center;
+    padding: 10px 24px;
 }
 
 /* Contact Section */
