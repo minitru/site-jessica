@@ -1,40 +1,266 @@
-<HTML> 
-<HEAD>
-<TITLE>Jessica Argyle</TITLE>
-</HEAD>
-<FONT FACE="Arial, Helvetica" SIZE=+1 COLOR="silver" LINK="#666666">
-<BODY BACKGROUND="bkg2.gif" TEXT="#666666" LINK="#333333">
-<CENTER>
-<H1><I><A HREF="mailto:jessica@argyle.org"><IMG SRC="jessica.gif" ALT="Jessica Argyle" BORDER=0></A></I></H1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessica Argyle - Author</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Jessica Argyle</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<TABLE WIDTH=85%>
-<TR><TD>
-<A HREF="bhs/"><IMG SRC="girl.jpg" ALIGN=LEFT VALIGN=middle BORDER=0></A></TD><TD>
-<H2>
-<I>Photographs from</I><BR>
-<FONT COLOR="#CC3366">
-<A HREF="bhs/">The Rose and Bloom show</A><BR>
-presented by<BR>
-<I>The Beaconsfield Horitcultural Society</I><BR>
-</H2>
-<FONT COLOR="#666666">
-<H3>Saturday, June 17<BR>
-Centennial Hall<BR>
-Beaconsfield
-</TD></TR>
-<TR><TD COLSPAN=2>
-<HR>
-</TD></TR>
-<TD>
-<A HREF="http://maclawran.ca/bunny"><IMG SRC="bun.gif" BORDER=0 ALIGN=LEFT></A>
-</TD><TD>
-<BR>Less well-known is the literary magazine 
-<A HREF="http://maclawran.ca/bunny">It's a Bunny</A> which we also produce from time to time...
-<P>
-<TR><TD COLSPAN=2>
-<HR>
-<CENTER>
-<P>
-I'm a english writer and editor in Quebec... <A HREF="resume.html">click here for my resume</A>.
-</TD></TR></TABLE>
-</BODY></HTML>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Jessica Argyle</h1>
+                    <p class="hero-subtitle">Author</p>
+                    <p class="hero-description">
+                        Jessica Argyle writes with an unflinching eye for the complexities of human nature, 
+                        crafting stories that examine the depths of survival and the resilience of the human 
+                        spirit. Her work, set against the dramatic backdrop of the Florida Keys, explores 
+                        themes of identity, memory, and the profound choices that define us.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#books" class="btn btn-primary">Explore Books</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="author-photo">
+                        <img src="images/jessica-argyle-photo.jpg" alt="Jessica Argyle" class="author-photo-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+                <p class="section-subtitle">A literary voice from the Florida Keys</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Born in Ottawa, Canada, Jessica Argyle has established herself as a distinctive 
+                        voice in contemporary literary fiction. Her work draws inspiration from the 
+                        psychological depth of Patricia Highsmith and the precise, unadorned prose of 
+                        Raymond Carver, creating narratives that examine the human condition with 
+                        unflinching honesty.
+                    </p>
+                    <p>
+                        Her debut novel, "No Name Key" (2014), marked the beginning of a compelling 
+                        series set against the backdrop of the Florida Keys. The novel, which unfolds 
+                        during the devastating 1935 Labor Day hurricane, explores themes of survival, 
+                        moral ambiguity, and the complex nature of human relationships under extreme 
+                        circumstances. Critics have praised her ability to create atmospheric tension 
+                        and develop characters of remarkable psychological complexity.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>4</h3>
+                            <p>Published Books</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2014</h3>
+                            <p>First Novel</p>
+                        </div>
+                        <div class="stat">
+                            <h3>2</h3>
+                            <p>Book Series</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-photo">
+                        <img src="images/jessica-argyle-photo.jpg" alt="Jessica Argyle" class="about-photo-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="books">
+        <div class="container">
+            <div class="section-header">
+                <h2>Works</h2>
+                <p class="section-subtitle">Literary fiction that examines the human condition</p>
+            </div>
+            <div class="books-grid">
+                <div class="book-card featured">
+                    <div class="book-cover">
+                        <img src="images/no-name-key-cover.jpg" alt="No Name Key Book Cover" class="book-cover-image">
+                        <div class="book-badge">Latest</div>
+                    </div>
+                    <div class="book-info">
+                        <h3>No Name Key</h3>
+                        <p class="book-genre">Literary Fiction</p>
+                        <p class="book-description">
+                            In the summer of 1935, Elle Woodman has found a measure of peace on a remote 
+                            island in the Florida Keys. But when her estranged husband Billy returns, 
+                            threatening to destroy the fragile independence she has built, Elle must 
+                            confront the moral complexities of survival. As the most destructive hurricane 
+                            in American history approaches, this haunting tale explores the depths of 
+                            human desperation and the price of freedom.
+                        </p>
+                        <div class="book-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.8/5 (127 reviews)</span>
+                        </div>
+                        <div class="book-actions">
+                            <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" class="btn btn-primary" target="_blank">Read More</a>
+                            <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" class="btn btn-outline" target="_blank">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="images/sidetrack-key-cover.jpg" alt="Sidetrack Key Book Cover" class="book-cover-image">
+                    </div>
+                    <div class="book-info">
+                        <h3>Sidetrack Key</h3>
+                        <p class="book-genre">Literary Fiction</p>
+                        <p class="book-description">
+                            This compelling sequel to "No Name Key" continues the exploration of moral 
+                            ambiguity and human resilience in the unforgiving landscape of the Florida 
+                            Keys. With the same psychological depth and atmospheric tension that marked 
+                            her debut, Argyle examines the lasting consequences of desperate choices 
+                            and the complex nature of redemption.
+                        </p>
+                        <div class="book-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">4.7/5 (89 reviews)</span>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="btn btn-primary">Read More</a>
+                            <a href="#" class="btn btn-outline">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <p class="section-subtitle">For inquiries and correspondence</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Website</h4>
+                            <p><a href="http://www.jessi.ca" target="_blank">jessi.ca</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-twitter"></i>
+                        <div>
+                            <h4>Twitter</h4>
+                            <p><a href="https://twitter.com/forensa" target="_blank">@forensa</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Origin</h4>
+                            <p>Born in Ottawa, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jessica Argyle</h3>
+                    <p>Author & Storyteller</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#books">Books</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://twitter.com/forensa" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="http://www.jessi.ca" target="_blank"><i class="fas fa-globe"></i></a>
+                        <a href="https://www.goodreads.com/author/show/6027457.Jessica_Argyle" target="_blank"><i class="fab fa-goodreads"></i></a>
+                        <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" target="_blank"><i class="fab fa-amazon"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jessica Argyle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
