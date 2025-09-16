@@ -737,7 +737,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.4) !important;
+        background-color: rgba(0, 0, 0, 0.6) !important;
         backdrop-filter: blur(12px);
         width: 100%;
         text-align: center;
