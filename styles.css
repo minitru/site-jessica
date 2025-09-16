@@ -553,6 +553,12 @@ section {
     flex-wrap: wrap;
 }
 
+.book-actions .btn {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+}
+
 /* Contact Section */
 .contact {
     background: rgba(0, 0, 0, 0.3);
