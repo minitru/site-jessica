@@ -506,12 +506,12 @@ section {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--secondary-color);
-    color: white;
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    color: #1a1a1a;
     padding: 0.4rem 0.8rem;
     border-radius: 2px;
     font-size: 0.75rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.05em;
 }
 
