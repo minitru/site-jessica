@@ -167,6 +167,8 @@ h1 ins {
 .posts a, .kicker, h3 { font-weight: 500; }
 .shot { margin: 0; }
 .shot figcaption { font-family: var(--type); font-size: .75rem; font-weight: 500; letter-spacing: .04em; color: var(--ink-soft); margin-top: .5rem; }
+@media (min-width: 880px) { .row.wide { grid-template-columns: minmax(0, 40rem) minmax(0, 22rem); } }
+.art img { display: block; width: 100%; max-width: 22rem; height: auto; border-radius: 2px; box-shadow: 0 10px 24px -12px rgba(10, 12, 40, .55); }
 </style>
 </head>
 <body>
@@ -200,7 +202,7 @@ h1 ins {
     </section>
 
     <section class="novel" id="wanda-and-me">
-      <div class="row">
+      <div class="row wide">
         <div class="col">
           <p class="label">The new novel</p>
           <h2>Wanda &amp; Me</h2>
@@ -218,7 +220,10 @@ h1 ins {
             <a class="btn" href="https://jessicaargyle.substack.com/p/demon-lovers" target="_blank" rel="noopener">A scene: Hitchhiking with Wanda</a>
           </div>
         </div>
-        <aside class="wanda drop"><span class="sr">Wanda&rsquo;s note: </span>She makes me sound difficult. I&rsquo;m thorough.<span class="w">W.</span></aside>
+        <div class="side">
+          <figure class="shot art"><img src="images/tattooed-daughter.jpg" alt="Tattooed Daughter, a painting by Michael Haykin: two overlapping faces, one marked in blue and one in red" width="780" height="780" loading="lazy"><figcaption><em>Tattooed Daughter</em> by Michael Haykin, from <em>Painting a Pandemic</em></figcaption></figure>
+          <aside class="wanda"><span class="sr">Wanda&rsquo;s note: </span>She makes me sound difficult. I&rsquo;m thorough.<span class="w">W.</span></aside>
+        </div>
       </div>
     </section>
 
