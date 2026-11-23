@@ -135,6 +135,9 @@ h1 ins {
 .book { display: flex; gap: 1.5rem; align-items: flex-start; min-width: 0; }
 .book img { width: 8.75rem; flex: none; height: auto; display: block; box-shadow: 0 10px 24px -12px rgba(10, 12, 40, .55); }
 .book .col { gap: .6rem; font-size: 1.0625rem; line-height: 1.5; }
+.book .cover { flex: none; display: block; transition: transform .15s; }
+.book .cover:hover { transform: translateY(-3px); }
+@media (prefers-reduced-motion: reduce) { .book .cover { transition: none; } }
 @media (max-width: 460px) { .book { flex-direction: column; } .book img { width: 10.5rem; } }
 .also { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; align-items: baseline; }
 .press { font-family: var(--display); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.15; }
@@ -222,7 +225,7 @@ h1 ins {
 
       <div class="books">
         <article class="book">
-          <img src="images/no-name-key-cover.jpg" alt="Cover of No Name Key by Jessica Argyle" width="937" height="1500" loading="lazy">
+          <a class="cover" href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" target="_blank" rel="noopener" aria-label="No Name Key on Amazon"><img src="images/no-name-key-cover.jpg" alt="Cover of No Name Key by Jessica Argyle" width="937" height="1500" loading="lazy"></a>
           <div class="col">
             <p class="label">Book one &middot; 2014</p>
             <h3>No Name Key</h3>
@@ -233,7 +236,7 @@ h1 ins {
         </article>
 
         <article class="book">
-          <img src="images/sidetrack-key-cover.jpg" alt="Cover of Sidetrack Key by Jessica Argyle" width="938" height="1500" loading="lazy">
+          <a class="cover" href="https://www.amazon.com/s?k=Sidetrack+Key+Jessica+Argyle" target="_blank" rel="noopener" aria-label="Sidetrack Key on Amazon"><img src="images/sidetrack-key-cover.jpg" alt="Cover of Sidetrack Key by Jessica Argyle" width="938" height="1500" loading="lazy"></a>
           <div class="col">
             <p class="label">Book two &middot; 2022</p>
             <h3>Sidetrack Key</h3>
