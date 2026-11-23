@@ -1,259 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jessica Argyle - Author</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jessica Argyle | Novelist, Key West</title>
+<meta name="description" content="Jessica Argyle is a Key West novelist, author of No Name Key and Sidetrack Key. Her new novel, Wanda &amp; Me, follows a girl in 1980s Montreal and the imaginary friend who refuses to leave.">
+<link rel="canonical" href="https://jessi.ca/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jessica Argyle | Novelist, Key West">
+<meta property="og:description" content="Jessica Argyle is a Key West novelist, author of No Name Key and Sidetrack Key. Her new novel, Wanda &amp; Me, follows a girl in 1980s Montreal and the imaginary friend who refuses to leave.">
+<meta property="og:url" content="https://jessi.ca/">
+<meta property="og:image" content="https://jessi.ca/images/no-name-key-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Reenie+Beanie&display=swap">
+<style>
+/* Layout: a manuscript page that Wanda has marked up. One reading column,
+   a right margin for her pen. On phones her notes drop under the text they answer. */
+:root {
+  --paper: #eef0f7;      /* storm-light, from the No Name Key cover */
+  --sheet: #f9fafd;
+  --ink: #191b3a;        /* indigo ink */
+  --ink-soft: #565a7c;
+  --rule: #c8cbde;
+  --pen: #c2185b;        /* Wanda's pen */
+  --display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --text: "Newsreader", Georgia, "Times New Roman", serif;
+  --type: "Courier Prime", "Courier New", Courier, monospace;
+  --hand: "Reenie Beanie", "Bradley Hand", "Segoe Print", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12142b; --sheet: #1a1d3c; --ink: #e7e9f6; --ink-soft: #a5a9c9;
+    --rule: #30345c; --pen: #ff6fa5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12142b; --sheet: #1a1d3c; --ink: #e7e9f6; --ink-soft: #a5a9c9;
+  --rule: #30345c; --pen: #ff6fa5; color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; }
+img { max-width: 100%; }
+section[id] { scroll-margin-top: 1rem; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--text); font-size: 1.1875rem; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  max-width: 72rem; margin-inline: auto; padding-block: 1.5rem 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 700px) { .page { padding-left: max(2.5rem, env(safe-area-inset-left, 0px)); padding-right: max(2.5rem, env(safe-area-inset-right, 0px)); } }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--pen); }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+p { margin: 0; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Manuscript slug line */
+.slug {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem;
+  font-family: var(--type); font-size: .875rem; letter-spacing: .04em;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--rule);
+}
+.slug .who { text-transform: uppercase; }
+.slug nav { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
+.slug a { text-decoration: none; }
+.slug a:hover { text-decoration: underline; }
+
+/* Shared section frame: reading column + Wanda's margin */
+section { padding-block: 4rem 0; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.25rem 3.5rem; align-items: start; }
+@media (min-width: 880px) { .row { grid-template-columns: minmax(0, 40rem) minmax(0, 15rem); } }
+.col { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
+.label { font-family: var(--type); font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(2rem, 4.6vw, 3.25rem); line-height: 1.05; letter-spacing: -.01em; font-variation-settings: "opsz" 144; }
+h3 { font-size: 1.6rem; line-height: 1.15; }
+.facts { font-family: var(--type); font-size: .9rem; color: var(--ink-soft); }
+
+/* Wanda */
+.wanda {
+  font-family: var(--hand); color: var(--pen);
+  font-size: 1.9rem; line-height: 1.02; transform: rotate(-2deg); transform-origin: left top;
+  max-width: 15rem; padding-top: .25rem;
+}
+.wanda .w { display: block; margin-top: .15rem; }
+@media (min-width: 880px) { .wanda.drop { margin-top: 5.5rem; } }
+
+/* Hero */
+.hero { padding-block: 3.25rem 0; }
+h1 {
+  font-size: clamp(2.35rem, 6.4vw, 5.1rem); line-height: 1.04; letter-spacing: -.015em;
+  font-variation-settings: "opsz" 144; max-width: 17ch;
+}
+h1 del { color: var(--ink-soft); text-decoration: line-through; text-decoration-color: var(--pen); text-decoration-thickness: .07em; }
+h1 ins {
+  text-decoration: none; font-family: var(--hand); color: var(--pen); font-weight: 400;
+  font-size: 1.28em; line-height: .9; letter-spacing: 0;
+  display: inline-block; max-width: 100%; transform: rotate(-1.5deg); transform-origin: left center;
+}
+.hero .row { margin-top: 2.25rem; }
+.lede { font-size: 1.3rem; line-height: 1.5; }
+.key { font-family: var(--type); font-size: .875rem; color: var(--ink-soft); }
+.key b { color: var(--pen); font-weight: 700; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .4rem; }
+.btn {
+  display: inline-block; font-family: var(--type); font-size: .95rem; font-weight: 700; letter-spacing: .02em;
+  padding: .8rem 1.2rem; text-decoration: none; border: 1.5px solid var(--ink); border-radius: 2px;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn.solid:hover { background: var(--pen); border-color: var(--pen); color: var(--paper); }
+.btn:not(.solid):hover { border-color: var(--pen); color: var(--pen); }
+
+/* Wanda & Me */
+.novel h2 { font-size: clamp(2.6rem, 7vw, 5rem); font-style: italic; }
+.quote {
+  background: var(--sheet); border: 1px solid var(--rule); padding: 1.4rem 1.5rem; margin: .4rem 0 0;
+  font-family: var(--display); font-size: 1.45rem; line-height: 1.3; font-style: italic;
+}
+.quote footer { font-family: var(--type); font-style: normal; font-size: .85rem; color: var(--ink-soft); margin-top: .7rem; }
+.kicker { font-family: var(--display); font-size: 1.5rem; line-height: 1.25; }
+
+/* Books */
+.books { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: 2.5rem 3rem; margin-top: 2rem; }
+.book { display: flex; gap: 1.5rem; align-items: flex-start; min-width: 0; }
+.book img { width: 8.75rem; flex: none; height: auto; display: block; box-shadow: 0 10px 24px -12px rgba(10, 12, 40, .55); }
+.book .col { gap: .6rem; font-size: 1.0625rem; line-height: 1.5; }
+@media (max-width: 460px) { .book { flex-direction: column; } .book img { width: 10.5rem; } }
+.also { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; align-items: baseline; }
+.press { font-family: var(--display); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.15; }
+.press cite { display: block; font-family: var(--type); font-style: normal; font-size: .85rem; color: var(--ink-soft); margin-top: .6rem; }
+
+/* About */
+.about .row { margin-top: 1.5rem; }
+.photo { display: block; width: 100%; max-width: 15rem; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 30%; border-radius: 2px; box-shadow: 0 10px 24px -12px rgba(10, 12, 40, .55); }
+.side { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Newsletter */
+.posts { list-style: none; margin: .5rem 0 0; padding: 0; border-top: 1px solid var(--rule); }
+.posts li { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: .25rem 1rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.posts time { font-family: var(--type); font-size: .85rem; color: var(--ink-soft); }
+.posts a { font-family: var(--display); font-size: 1.3rem; line-height: 1.2; text-decoration: none; }
+.posts a:hover { text-decoration: underline; }
+.posts small { display: block; font-family: var(--text); font-size: 1rem; color: var(--ink-soft); margin-top: .15rem; }
+
+/* Footer */
+.foot { margin-top: 5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; font-family: var(--type); font-size: .875rem; color: var(--ink-soft); }
+.foot nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Jessica Argyle</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#books">Books</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+<div class="page">
+
+  <header class="slug">
+    <span class="who">Argyle / Key West, Florida</span>
+    <nav aria-label="Sections">
+      <a href="#wanda-and-me">Wanda &amp; Me</a>
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+      <a href="#newsletter">Newsletter</a>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Jessica Argyle</h1>
-                    <p class="hero-subtitle">Key West Author</p>
-                    <p class="hero-description">
-                        Jessica Argyle writes with an unflinching eye for the complexities of human nature, 
-                        crafting stories that examine the depths of survival and the resilience of the human 
-                        spirit. Her work, set against the spectacular backdrop of the Florida Keys, explores 
-                        themes of identity, memory, and the profound choices that define us.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#books" class="btn btn-primary">Explore Books</a>
-                        <a href="#about" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="author-photo">
-                        <img src="images/jessica-argyle-photo.jpg" alt="Jessica Argyle" class="author-photo-img">
-                    </div>
-                </div>
-            </div>
+  <main>
+
+    <section class="hero" id="top">
+      <h1>Jessica Argyle writes novels about <del>the resilience of the human spirit</del> <ins><span class="sr">Wanda&rsquo;s correction: </span>women who get away with it.</ins></h1>
+      <div class="row">
+        <div class="col">
+          <p class="lede">Two novels of murder and weather in the Florida Keys of the 1930s. Now a third book, <em>Wanda &amp; Me</em>, about a girl in 1980s Montreal and the imaginary friend who refuses to leave.</p>
+          <p class="key"><b>Pink ink is Wanda.</b> She is the imaginary friend. She edits.</p>
+          <div class="actions">
+            <a class="btn solid" href="https://jessicaargyle.substack.com/p/wanda-and-me" target="_blank" rel="noopener">Read Chapter One</a>
+            <a class="btn" href="#books">See the books</a>
+          </div>
         </div>
+        <aside class="wanda"><span class="sr">Wanda&rsquo;s note: </span>Fixed it.<span class="w">W.</span></aside>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About</h2>
-                <p class="section-subtitle">A literary voice from the Florida Keys</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Born in Ottawa, Canada, Jessica Argyle has established herself as a distinctive 
-                        voice in contemporary literary fiction. Her work draws inspiration from the 
-                        psychological depth of Patricia Highsmith and the precise, unadorned prose of 
-                        Raymond Carver, creating narratives that examine the human condition with 
-                        unflinching honesty.
-                    </p>
-                    <p>
-                        Her debut novel, "No Name Key" (2014), marked the beginning of a compelling 
-                        series set against the backdrop of the Florida Keys. The novel, which unfolds 
-                        during the devastating 1935 Labor Day hurricane, explores themes of survival, 
-                        moral ambiguity, and the complex nature of human relationships under extreme 
-                        circumstances. Critics have praised her ability to create atmospheric tension 
-                        and develop characters of remarkable psychological complexity.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>4</h3>
-                            <p>Published Books</p>
-                        </div>
-                        <div class="stat">
-                            <h3>2014</h3>
-                            <p>First Novel</p>
-                        </div>
-                        <div class="stat">
-                            <h3>2</h3>
-                            <p>Book Series</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="about-photo">
-                        <img src="images/jessica-argyle-photo.jpg" alt="Jessica Argyle" class="about-photo-img">
-                    </div>
-                </div>
-            </div>
+    <section class="novel" id="wanda-and-me">
+      <div class="row">
+        <div class="col">
+          <p class="label">The new novel</p>
+          <h2>Wanda &amp; Me</h2>
+          <p class="facts">Speculative literary fiction &middot; 80,000 words &middot; Montreal, the 1980s</p>
+          <p>Me is never named. Her family&rsquo;s most lasting gift is a talent for escape, and she will go anywhere a thrill is hiding, usually with a life-defying dose of something in her pocket.</p>
+          <p>But Me has an edge nobody else can see. Wanda turned up in an empty Christmas box when Me was small and promised never to abandon her. Wanda is invisible and inaudible to everyone else. She whispers in Me&rsquo;s ear and turns every harrowing situation into a game.</p>
+          <p>Then Me gets tired. She wants to go to school. She wants to learn how to cook. She meets Bucky, who is learning to work his wheelchair, and she breaks Wanda&rsquo;s first rule of loyalty.</p>
+          <p class="kicker">It is never a good idea to make Wanda angry.</p>
+          <blockquote class="quote">
+            &ldquo;She is my alter ego and much meaner than I am.&rdquo;
+            <footer>Jessica, on Wanda</footer>
+          </blockquote>
+          <div class="actions">
+            <a class="btn solid" href="https://jessicaargyle.substack.com/p/wanda-and-me" target="_blank" rel="noopener">Chapter One: The Empty Toybox</a>
+            <a class="btn" href="https://jessicaargyle.substack.com/p/demon-lovers" target="_blank" rel="noopener">A scene: Hitchhiking with Wanda</a>
+          </div>
         </div>
+        <aside class="wanda drop"><span class="sr">Wanda&rsquo;s note: </span>She makes me sound difficult. I&rsquo;m thorough.<span class="w">W.</span></aside>
+      </div>
     </section>
 
-    <!-- Books Section -->
-    <section id="books" class="books">
-        <div class="container">
-            <div class="section-header">
-                <h2>Works</h2>
-                <p class="section-subtitle">Literary fiction that examines the human condition</p>
-            </div>
-            <div class="books-grid">
-                <div class="book-card featured">
-                    <div class="book-cover">
-                        <img src="images/no-name-key-cover.jpg" alt="No Name Key Book Cover" class="book-cover-image">
-                        <div class="book-badge">Latest</div>
-                    </div>
-                    <div class="book-info">
-                        <h3>No Name Key</h3>
-                        <p class="book-genre">Literary Fiction</p>
-                        <p class="book-description">
-                            In the summer of 1935, Elle Woodman has found a measure of peace on a remote 
-                            island in the Florida Keys. But when her estranged husband Billy returns, 
-                            threatening to destroy the fragile independence she has built, Elle must 
-                            confront the moral complexities of survival. As the most destructive hurricane 
-                            in American history approaches, this haunting tale explores the depths of 
-                            human desperation and the price of freedom.
-                        </p>
-                        <div class="book-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.8/5 (127 reviews)</span>
-                        </div>
-                        <div class="book-actions">
-                            <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" class="btn btn-primary" target="_blank">Read More</a>
-                            <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" class="btn btn-outline" target="_blank">Buy on Amazon</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="book-card">
-                    <div class="book-cover">
-                        <img src="images/sidetrack-key-cover.jpg" alt="Sidetrack Key Book Cover" class="book-cover-image">
-                    </div>
-                    <div class="book-info">
-                        <h3>Sidetrack Key</h3>
-                        <p class="book-genre">Literary Fiction</p>
-                        <p class="book-description">
-                            This compelling sequel to "No Name Key" continues the exploration of moral 
-                            ambiguity and human resilience in the unforgiving landscape of the Florida 
-                            Keys. With the same psychological depth and atmospheric tension that marked 
-                            her debut, Argyle examines the lasting consequences of desperate choices 
-                            and the complex nature of redemption.
-                        </p>
-                        <div class="book-rating">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="rating-text">4.7/5 (89 reviews)</span>
-                        </div>
-                        <div class="book-actions">
-                            <a href="#" class="btn btn-primary">Read More</a>
-                            <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" class="btn btn-outline" target="_blank">Buy on Amazon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="books">
+      <div class="row">
+        <div class="col">
+          <p class="label">The No Name Key series</p>
+          <h2>The Keys, 1935. A hurricane is the least of it.</h2>
         </div>
+        <aside class="wanda"><span class="sr">Wanda&rsquo;s note: </span>Written before she let me near the desk. Still, one murder each.<span class="w">W.</span></aside>
+      </div>
+
+      <div class="books">
+        <article class="book">
+          <img src="images/no-name-key-cover.jpg" alt="Cover of No Name Key by Jessica Argyle" width="937" height="1500" loading="lazy">
+          <div class="col">
+            <p class="label">Book one &middot; 2014</p>
+            <h3>No Name Key</h3>
+            <p>Elle Woodman wants nothing more than a home of her own on the lonely isle of No Name Key. Then her brutal, drunken husband Billy tracks her down. On the morning of the 1935 Labor Day hurricane, Elle puts him on the last ferry out.</p>
+            <p><em>Or did she?</em></p>
+            <div class="actions"><a class="btn" href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" target="_blank" rel="noopener">Buy on Amazon</a></div>
+          </div>
+        </article>
+
+        <article class="book">
+          <img src="images/sidetrack-key-cover.jpg" alt="Cover of Sidetrack Key by Jessica Argyle" width="938" height="1500" loading="lazy">
+          <div class="col">
+            <p class="label">Book two &middot; 2022</p>
+            <h3>Sidetrack Key</h3>
+            <p>Billy is gone and no one suspects how he died. No one but Blanche Rowlands, who loved him, and who now owns the lodge where Elle works. Elle has two powerful enemies. One can take her freedom. The other can take her life.</p>
+            <p class="facts">Cover painting by the author.</p>
+            <!-- TO DO: replace this Amazon search link with the direct Sidetrack Key product link -->
+            <div class="actions"><a class="btn" href="https://www.amazon.com/s?k=Sidetrack+Key+Jessica+Argyle" target="_blank" rel="noopener">Find on Amazon</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="row" style="margin-top:3rem">
+        <blockquote class="press" style="margin:0">
+          &ldquo;This book is not for sissies.&rdquo;
+          <cite>C.S. Gilbert, Konk Life, on No Name Key</cite>
+        </blockquote>
+      </div>
+
+      <p class="also"><span class="label">Also</span> <span><a href="https://www.amazon.com/Arrest-Me-before-write-again-ebook/dp/B005JW0BXA" target="_blank" rel="noopener"><em>Arrest Me (Before I Write Again)</em></a>, short stories, 2011.</span></p>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contact</h2>
-                <p class="section-subtitle">For inquiries and correspondence</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <div>
-                            <h4>Website</h4>
-                            <p><a href="http://www.argyle.org" target="_blank">Bunny Island - the blog</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-twitter"></i>
-                        <div>
-                            <h4>Twitter</h4>
-                            <p><a href="https://twitter.com/forensa" target="_blank">@forensa</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+    <section class="about" id="about">
+      <p class="label">About</p>
+      <div class="row">
+        <div class="col">
+          <p>I was born in Ottawa, took an MA in creative writing at Concordia University in Montreal, and co-founded <em>It&rsquo;s a Bunny</em>, one of the internet&rsquo;s early literary magazines. My stories ran in <em>Moosehead</em>, <em>Paperplates</em> and <em>Matrix</em>. Then I wrote advertising to pay the rent.</p>
+          <p>In 2009 I moved from Montreal to Key West and started over. <em>No Name Key</em> began as the winning entry in The Studios of Key West&rsquo;s Writes of Spring contest. <em>Sidetrack Key</em> began with an Anne McKee Artist Fund grant.</p>
+          <p>Along the way: first prize in the Tennessee Williams short story contest, a Fish Publishing flash fiction shortlist, poems in <em>SoFloJo</em>, and a story in <em>True Tales from The 90-Day Memoir: Mothers</em>.</p>
+          <p>I once threw a biography of Raymond Carver across the room. I stand by it.</p>
         </div>
+        <div class="side">
+          <img class="photo" src="images/jessica-argyle-photo.jpg" alt="Jessica Argyle" width="1124" height="886" loading="lazy">
+          <aside class="wanda"><span class="sr">Wanda&rsquo;s note: </span>She left out the cats. There have always been cats.<span class="w">W.</span></aside>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Jessica Argyle</h3>
-                    <p>Author & Storyteller</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#books">Books</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://twitter.com/forensa" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="http://www.argyle.org" target="_blank" title="Bunny Island - the blog"><i class="fas fa-globe"></i></a>
-                        <a href="https://www.goodreads.com/author/show/6027457.Jessica_Argyle" target="_blank"><i class="fab fa-goodreads"></i></a>
-                        <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" target="_blank"><i class="fab fa-amazon"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Jessica Argyle. All rights reserved.</p>
-            </div>
+    <section id="newsletter">
+      <div class="row">
+        <div class="col">
+          <p class="label">Newsletter</p>
+          <h2>New writing, most weeks, free.</h2>
+          <p>Chapters from <em>Wanda &amp; Me</em>, scenes my narrator shouldn&rsquo;t tell, and arguments about books. It arrives by email from Substack.</p>
+          <ul class="posts">
+            <li><time datetime="2026-11-07">Nov 7</time><span><a href="https://jessicaargyle.substack.com/p/wanda-and-me" target="_blank" rel="noopener">Wanda &amp; Me</a><small>Chapter One: The Empty Toybox</small></span></li>
+            <li><time datetime="2026-11-22">Nov 22</time><span><a href="https://jessicaargyle.substack.com/p/ai-will-kill-the-average-book" target="_blank" rel="noopener">AI Will Kill the Average Book</a><small>Write the weird</small></span></li>
+            <li><time datetime="2026-11-12">Nov 12</time><span><a href="https://jessicaargyle.substack.com/p/unpopular-opinion" target="_blank" rel="noopener">Unpopular Opinion</a><small>Boris is the moral center of The Goldfinch</small></span></li>
+            <li><time datetime="2026-10-18">Oct 18</time><span><a href="https://jessicaargyle.substack.com/p/wanda-does-what-she-likes" target="_blank" rel="noopener">I Threw Carver Across the Room</a><small>How Wanda got the job</small></span></li>
+          </ul>
+          <div class="actions" style="margin-top:.75rem">
+            <a class="btn solid" href="https://jessicaargyle.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack</a>
+          </div>
         </div>
-    </footer>
+        <aside class="wanda drop"><span class="sr">Wanda&rsquo;s note: </span>Wanda says you should.</aside>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+  </main>
+
+  <!-- TO DO (optional): add a public contact email in the footer below -->
+  <footer class="foot">
+    <span>&copy; 2026 Jessica Argyle. Wanda claims the rest.</span>
+    <nav aria-label="Elsewhere">
+      <a href="https://jessicaargyle.substack.com/" target="_blank" rel="noopener">Substack</a>
+      <a href="https://www.goodreads.com/author/show/6027457.Jessica_Argyle" target="_blank" rel="noopener">Goodreads</a>
+      <a href="https://www.amazon.com/No-Name-Key-Jessica-Argyle-ebook/dp/B00K6YM1Z2" target="_blank" rel="noopener">Amazon</a>
+    </nav>
+  </footer>
+
+</div>
 </body>
 </html>
