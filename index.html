@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://jessi.ca/images/no-name-key-cover.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Jost:ital,wght@0,300..700;1,300..700&family=Reenie+Beanie&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:ital,wght@0,300..700;1,300..700&family=Reenie+Beanie&display=swap">
 <style>
 /* Layout: a manuscript page that Wanda has marked up. One reading column,
    a right margin for her pen. On phones her notes drop under the text they answer. */
@@ -24,9 +24,9 @@
   --ink-soft: #565a7c;
   --rule: #c8cbde;
   --pen: #c8102e;        /* Wanda's pen */
-  --display: "Jost", "Futura", "Century Gothic", "Avenir Next", sans-serif;
-  --text: "Jost", "Futura", "Century Gothic", "Avenir Next", sans-serif;
-  --type: "Courier Prime", "Courier New", Courier, monospace;
+  --display: "Raleway", "Avenir Next", "Century Gothic", sans-serif;
+  --text: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --type: "Raleway", "Avenir Next", "Century Gothic", sans-serif;
   --hand: "Reenie Beanie", "Bradley Hand", "Segoe Print", cursive;
 }
 @media (prefers-color-scheme: dark) {
@@ -48,7 +48,7 @@ img { max-width: 100%; }
 section[id] { scroll-margin-top: 1rem; }
 body {
   background: var(--paper); color: var(--ink);
-  font-family: var(--text); font-size: 1.1875rem; line-height: 1.62; font-weight: 400;
+  font-family: var(--text); font-size: 1.125rem; line-height: 1.65; font-weight: 300; font-variant-numeric: lining-nums;
   -webkit-font-smoothing: antialiased;
 }
 .page {
@@ -81,7 +81,7 @@ section { padding-block: 4rem 0; }
 @media (min-width: 880px) { .row { grid-template-columns: minmax(0, 40rem) minmax(0, 15rem); } }
 .col { display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; }
 .label { font-family: var(--type); font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
-h1, h2, h3 { font-family: var(--display); font-weight: 500; margin: 0; text-wrap: balance; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
 h2 { font-size: clamp(2rem, 4.6vw, 3.25rem); line-height: 1.05; letter-spacing: -.01em; }
 h3 { font-size: 1.6rem; line-height: 1.15; }
 .facts { font-family: var(--type); font-size: .9rem; color: var(--ink-soft); }
@@ -159,6 +159,14 @@ h1 ins {
 /* Footer */
 .foot { margin-top: 5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; font-family: var(--type); font-size: .875rem; color: var(--ink-soft); }
 .foot nav { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+
+/* Raleway for the small utility text */
+.slug, .facts, .key, .posts time, .quote footer, .press cite, .foot { font-weight: 500; }
+.label { font-weight: 600; }
+.btn { font-weight: 600; letter-spacing: .04em; }
+.posts a, .kicker, h3 { font-weight: 500; }
+.shot { margin: 0; }
+.shot figcaption { font-family: var(--type); font-size: .75rem; font-weight: 500; letter-spacing: .04em; color: var(--ink-soft); margin-top: .5rem; }
 </style>
 </head>
 <body>
@@ -268,7 +276,7 @@ h1 ins {
           <p>I once threw a biography of Raymond Carver across the room. I stand by it.</p>
         </div>
         <div class="side">
-          <img class="photo" src="images/jessica-argyle-typewriter.jpg" alt="Jessica Argyle at a typewriter" width="870" height="1419" loading="lazy">
+          <figure class="shot"><img class="photo" src="images/jessica-argyle-typewriter.jpg" alt="Jessica Argyle at a typewriter" width="870" height="1419" loading="lazy"><figcaption>Photo: Carol Tedesco</figcaption></figure>
           <aside class="wanda"><span class="sr">Wanda&rsquo;s note: </span>She left out the cats. There have always been cats.<span class="w">W.</span></aside>
         </div>
       </div>
